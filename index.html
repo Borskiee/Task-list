@@ -1,104 +1,45 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-    <link rel="stylesheet" href="styles.css" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Task list</title>
-  </head>
-  <body>
-    <main>
-      <!-- The Box itself -->
-      <div class="todo-list">
-        <!-- The insides of The Box -->
-        <header>
-          <span class="list">Task List</span>
-          <div class="task-list">
-            <input id="add-text" placeholder="What do you have planned?" />
-            <button class="add-button">+</button>
-          </div>
-        </header>
-        <span class="task-span">Task</span>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task List</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+</head>
+<body>
+  <main>
+    <div class="todo-list">
+      <header>
+        <span class="list">Task List</span>
+        <div class="task-list">
+          <input id="add-text" placeholder="What do you have planned?" />
+          <button class="add-button">+</button>
+        </div>
+      </header>
 
-                  <!-- ---------Tasks--------- -->
+      <span class="task-span">Task</span>
 
-         <div id="taskListJS">
-
-   <div class="task-item">
-  <label class="task">
-    <input type="checkbox" />
-    <span class="checkmark"></span>
-    <span class="text">Read a book</span>
-  </label>
-
-  <div class="edit-delete-btn">
-    <button class="edit">
-      <i class="fa-solid fa-pen-to-square"></i>
-    </button>
-    <button class="delete">
-      <i class="fa-solid fa-trash"></i>
-    </button>
-  </div>
-</div>
-
-         <div class="task-item">
-  <label class="task">
-    <input type="checkbox" />
-    <span class="checkmark"></span>
-    <span class="text">Read a book</span>
-  </label>
-
-  <div class="edit-delete-btn">
-    <button class="edit">
-      <i class="fa-solid fa-pen-to-square"></i>
-    </button>
-    <button class="delete">
-      <i class="fa-solid fa-trash"></i>
-    </button>
-  </div>
-</div>
-
+      <div id="taskListJS">
         <div class="task-item">
-  <label class="task">
-    <input type="checkbox" />
-    <span class="checkmark"></span>
-    <span class="text">Read a book</span>
-  </label>
-
-  <div class="edit-delete-btn">
-    <button class="edit">
-      <i class="fa-solid fa-pen-to-square"></i>
-    </button>
-    <button class="delete">
-      <i class="fa-solid fa-trash"></i>
-    </button>
-  </div>
-</div>
-         <div class="task-item">
-  <label class="task">
-    <input type="checkbox" />
-    <span class="checkmark"></span>
-    <span class="text">Read a book</span>
-  </label>
-
-  <div class="edit-delete-btn">
-    <button class="edit">
-      <i class="fa-solid fa-pen-to-square"></i>
-    </button>
-    <button class="delete">
-      <i class="fa-solid fa-trash"></i>
-    </button>
-  </div>
-</div>
-
-</div> <!-- JS DIV -->
+          <div class="task">
+            <label>
+              <input type="checkbox" />
+              <span class="checkmark"></span>
+            </label>
+            <span class="text">Read a book</span>
+          </div>
+          <div class="edit-delete-btn">
+            <button class="edit"><i class="fa fa-pen"></i></button>
+            <button class="delete"><i class="fa fa-trash"></i></button>
+          </div>
+        </div>
       </div>
-    </main>
-    <script src="script.js"></script>
-  </body>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
 </html>

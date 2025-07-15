@@ -1,146 +1,125 @@
+/* 🌑 Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  font-family: 'Segoe UI', sans-serif;
+  background: #121212;
   min-height: 100vh;
-  background: linear-gradient(135deg, #1e1e1e 40%, #36154b 80%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f0f0f0;
 }
 
+/* 📦 Main Container */
 main {
-  background: linear-gradient(to bottom right, #2d2d2d, #1e1e1e);
-  width: 82vh;
-  height: 90vh;
-  border-radius: 20px;
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4),
-              inset 0 1px 1px rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(4px);
-  transition: transform 0.3s ease;
+  background: #1e1e1e;
+  width: 90%;
+  max-width: 600px;
+  padding: 30px 25px;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
 }
 
-header {margin-bottom: -10px;}
-
+/* 🧢 Header */
 .list {
-  font-family: system-ui, sans-serif;
-  font-weight: 300;
-  letter-spacing: 1.6px;
-  color: #cccccc;
-  font-size: 4vh;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #ffffff;
   margin-bottom: 20px;
-  opacity: 0.8;
+  display: block;
 }
 
-.todo-list {
-  padding: 14px;
-  height: 100%;
-  overflow: hidden;
+.task-list {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
 }
 
 #add-text {
-  background-color: #292828;
-  width: 66vh;
-  height: 5vh;
-  border-radius: 10px;
-  padding-left: 10px;
-  border: none;
-  color: #f1f1f1;
-  font-size: 2vh;
-  font-family: Arial, sans-serif;
-  margin-right: 21px;
-  margin-top: 10px;
-
+  flex: 1;
+  padding: 12px 16px;
+  border: 1px solid #333;
+  border-radius: 8px;
+  background: #252525;
+  font-size: 16px;
+  color: #f0f0f0;
+  transition: border 0.2s ease;
 }
 
-input:focus {outline: none;}
-
-input::placeholder {
-  opacity: 0.5;
-  color: #999;
-  font-size: 14px;
+#add-text::placeholder {
+  color: #888;
 }
 
-input:focus::placeholder {
-  color: transparent;
+#add-text:focus {
+  outline: none;
+  border-color: #7b5fe0;
 }
 
 .add-button {
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  width: 4.5vh;
-  height: 4.5vh;
-  background-color: #5e3b5c;
+  background-color: #7b5fe0;
   color: white;
+  font-size: 1.5rem;
   border: none;
-  font-size: 20px;
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
 
 .add-button:hover {
-  background-color: #a45fbf;
+  background-color: #674ed1;
 }
 
 .task-span {
-  display: block;
-  font-family: system-ui, sans-serif;
-  font-weight: 300;
-  letter-spacing: 1.6px;
-  color: #cccccc;
-  font-size: 3vh;
-  opacity: 0.8;
+  color: #aaa;
+  font-size: 1rem;
   margin-bottom: 10px;
+  display: block;
 }
 
-/* Task List */
-.task-list {
-  margin-bottom: 5vh;
-  overflow-y: auto;
-  display: block; /* ✅ No flex column */
-}
-
-/* Each task row */
+/* 🧾 Task Item */
 .task-item {
+  background-color: #2a2a2a;
+  border: 1px solid #3a3a3a;
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin-bottom: 12px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #1f1f1f;
-  width: 74.5vh;
-  height: 8vh;
- padding-left: 10px;
- padding-right: 10px;
-  border-radius: 10px;
-  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.02);
-  margin-bottom: 12px;
-
 }
 
-/* Task section (left side only) */
+/* 📌 Task Left Section */
 .task {
   display: flex;
-  align-items: center;
-  gap: 10px;
-  font-family: system-ui, sans-serif;
-  font-weight: 300;
-  color: #f0f0f0;
-  font-size: 18px;
-  cursor: pointer;
-  user-select: none;
-  flex-shrink: 1;
+  gap: 8px; 
+ 
 }
 
-.task input {
+/* ✅ Hidden Checkbox */
+.task input[type="checkbox"] {
   display: none;
 }
 
-/* Checkmark */
+/* ✅ Checkmark Box */
 .checkmark {
   width: 20px;
   height: 20px;
-  border-radius: 50%;
-  border: 2px solid #aaa;
+  border-radius: 4px;
+  border: 2px solid #888;
   display: inline-block;
   position: relative;
-  transition: all 0.3s ease;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
+/* ☑️ Checked Styles */
 .task input:checked + .checkmark {
   background-color: #63d471;
   border-color: #63d471;
@@ -149,51 +128,69 @@ input:focus::placeholder {
 .task input:checked + .checkmark::after {
   content: '';
   position: absolute;
-  left: 6px;
   top: 2px;
-  width: 5px;
-  height: 10px;
+  left: 5px;
+  width: 4px;
+  height: 9px;
   border: solid white;
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
 }
 
-/* Text that gets striked when checked */
-.task input:checked ~ .text {
-  color: #888;
+/* ☑️ Strike Text When Checked */
+.task input:checked + .checkmark + .text {
+  color: #777;
   text-decoration: line-through;
   opacity: 0.6;
 }
 
-/* Task text */
-.text {
+/* 📝 Task Text + Editable Input */
+.text,
+.inputText {
+  font-size: 16px;
+  color: #f0f0f0;
   flex-grow: 1;
-  line-height: 1;
-  display: flex;
-  align-items: center;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 40vh;
+  border: none;
+  background: transparent;
+  padding: 0;
+  font-family: inherit;
 }
 
-/* Edit/Delete Button Wrapper (right side, spaced) */
+.inputText {
+  padding: 6px 10px;
+  border-radius: 6px;
+  background-color: #1b1b1b;
+  border: 1px solid #444;
+}
+
+.text
+
+
+.inputText:focus {
+  outline: none;
+  border-color: #7b5fe0;
+}
+
+/* 🛠️ Button Wrapper */
 .edit-delete-btn {
   display: flex;
-  gap: 10px;
-  margin-right: 10px; /* ✅ Keeps distance from right edge */
+  gap: 8px;
 }
 
-/* Button styles */
-.edit, .delete {
-  border-radius: 50%;
+/* ✏️ Buttons */
+.edit,
+.delete {
   border: none;
-  width: 4vh;
-  height: 4vh;
-  background-color: #4e4e4e;
-  color: white;
-  font-size: 16px;
+  background: #3a3a3a;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 14px;
+  color: #ddd;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: background-color 0.2s ease;
 }
 
@@ -205,6 +202,6 @@ input:focus::placeholder {
   background-color: #e06b6b;
 }
 
-.fa-solid {font-size: 15px;}
-
-
+.fa-solid {
+  font-size: 14px;
+}
