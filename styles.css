@@ -36,7 +36,7 @@ main {
 
 .task-list {
   display: flex;
-  gap: 10px;
+  gap: 12px;
   margin-bottom: 25px;
 }
 
@@ -98,8 +98,9 @@ main {
 /* 📌 Task Left Section */
 .task {
   display: flex;
-  gap: 8px; 
- 
+  align-items: center;
+  gap: 8px;
+  flex: 1;
 }
 
 /* ✅ Hidden Checkbox */
@@ -108,7 +109,7 @@ main {
 }
 
 /* ✅ Checkmark Box */
-.checkmark {
+.checkmark {margin-top: 6px;
   width: 20px;
   height: 20px;
   border-radius: 4px;
@@ -149,7 +150,6 @@ main {
 .inputText {
   font-size: 16px;
   color: #f0f0f0;
-  flex-grow: 1;
   border: none;
   background: transparent;
   padding: 0;
@@ -157,14 +157,13 @@ main {
 }
 
 .inputText {
+  align-self: center;
+  width: 90%;
   padding: 6px 10px;
   border-radius: 6px;
   background-color: #1b1b1b;
   border: 1px solid #444;
 }
-
-.text
-
 
 .inputText:focus {
   outline: none;
@@ -198,10 +197,26 @@ main {
   background-color: #cba16a;
 }
 
+.edit.editing:hover {
+  background-color: #4caf50; /* a nice green */
+}
+
 .delete:hover {
   background-color: #e06b6b;
 }
 
 .fa-solid {
   font-size: 14px;
+}
+
+.text.completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+  color: #aaa;
+}
+
+.task input:checked ~ .text.completed ~ .edit-delete-btn .edit {
+  cursor: default;
+  pointer-events: none; /* Optional: disables clicks entirely */
+  opacity: 0.5; /* Optional: shows it's disabled */
 }
